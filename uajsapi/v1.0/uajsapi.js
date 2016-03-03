@@ -43,13 +43,15 @@ function collectUaInfo(uainfo){
             break;
         }
     }
+
+    //if not found osinfo in UA then return ;
+    if(typeof uainfo.osinfo === 'undefined') return ;
+    
     if(uainfo.osinfo.osname==="ios"){
         uainfo.osinfo.osver=uainfo.osinfo.osver.replace("_","");
     }
      
-    //if not found osinfo in UA then return ;
-    if(typeof uainfo.osinfo === 'undefined') return ;
-    
+     
     //app regxp支持优先级,越高越优先
     var appregxps=new Array(new AppRegxp("wechat","微信",new Array("MicroMessenger/(.*?) "),1),
         new AppRegxp("weibo","微博手机端",new Array("weibo__(.*)__"),1),
