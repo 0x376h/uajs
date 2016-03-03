@@ -42,13 +42,35 @@ if(uainfo.hasApplePay){
 }
 
 </pre>
+测试链接：http://static.datatiny.com/demo.html  
+QR：![demo url](/demo_url.png)
 
 #文档对象
+uainfo包含如下属性  
+1.osinfo :操作系统信息,包含如下属性  
+osname:操作系统名称，见 支持的操作系统  
+osver:操作系统的版本
 
+2.deviceinfo:可能的设备名称，仅供参考  
 
+3.appinfo:应用信息,包含如下属性  
+appname:应用名称，见 支持的应用  
+appver:应用版本
 
+4.hasApplePay:是否支持apple Pay
 
 #收集cookie
+应用会通过cookie方式收集如下信息：  
+1.用户的useragent串  
+2.refer/ip  
+3.每个用户分配一个uid
+
 
 #联系方式
+欢迎大家就加入，以便在变化时及时通知  
+QQ群：QR：![demo url](/qqqun.png)  
+<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=d8efb9587f10208a649123b858b2bc3455ca9211d455aaa73610afcb12d1edcd"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="数据微支持群" title="数据微支持群"></a>
 
+
+#协议
+BSD
