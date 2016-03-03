@@ -3,13 +3,13 @@
  */
 var UaInfo=function(){
     this.uastr=navigator.userAgent;
-    this.uascreen=getScreeninfo();
+    this.uascreen=getscreeninfo();
     collectUaInfo(this);
     return this;
 }
 var UaInfo=function(uastr){
     this.uastr=uastr;
-    this.uascreen=getScreeninfo();
+    this.uascreen=getscreeninfo();
      collectUaInfo(this);
     return this;
 }
@@ -23,6 +23,12 @@ var UaInfo=function(uastr,uascreen){
 logit();
 
 function collectUaInfo(uainfo){
+	
+		 if(typeof uainfo.uastr === 'undefined') {
+		 	 uainfo.uastr=navigator.userAgent;
+    	 uainfo.uascreen=getscreeninfo();		
+		 }
+
     var android=new OSRegxpRule("anroid",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
     var ios=new OSRegxpRule("ios",new Array("OS (.*) like Mac OS X"),new Array("\\((.*?);")); 
     var wp=new OSRegxpRule("windows phone",new Array("Windows Phone (.*?);"),new Array(".*; (.*)\\)"));
@@ -48,15 +54,15 @@ function collectUaInfo(uainfo){
     if(typeof uainfo.osinfo === 'undefined') return ;
     
     if(uainfo.osinfo.osname==="ios"){
-        uainfo.osinfo.osver=uainfo.osinfo.osver.replace("_","");
+        uainfo.osinfo.osver=uainfo.osinfo.osver.replace(/_/g,".");
     }
      
      
     //app regxp支持优先级,越高越优先
     var appregxps=new Array(new AppRegxp("wechat","微信",new Array("MicroMessenger/(.*?) "),1),
-        new AppRegxp("weibo","微博手机端",new Array("weibo__(.*)__"),1),
-        new AppRegxp("alipay","支付宝手机端",new Array("AlipayClient/(.*) "),1),
-        new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*) "),1),
+        new AppRegxp("weibo","微博手机端",new Array("weibo__(.*?)__"),1),
+        new AppRegxp("alipay","支付宝手机端",new Array("AlipayClient/(.*?) "),1),
+        new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*?) "),1),
         new AppRegxp("LBBROWSER","猎豹浏览器",new Array(" (LBBROWSER)"),9)
                 
         );
