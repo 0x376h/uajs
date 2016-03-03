@@ -9,6 +9,7 @@ var UaInfo=function(){
 }
 var UaInfo=function(uastr){
     this.uastr=uastr;
+
     this.uascreen=getscreeninfo();
      collectUaInfo(this);
     return this;
@@ -23,10 +24,13 @@ var UaInfo=function(uastr,uascreen){
 logit();
 
 function collectUaInfo(uainfo){
-	
+
 		 if(typeof uainfo.uastr === 'undefined') {
 		 	 uainfo.uastr=navigator.userAgent;
-    	 uainfo.uascreen=getscreeninfo();		
+    	 
+		 }
+		 if(typeof uainfo.uascreen === 'undefined') {
+		 		uainfo.uascreen=getscreeninfo();		
 		 }
 
     var android=new OSRegxpRule("anroid",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
@@ -155,8 +159,9 @@ function doitatwechat(uainfo){
     }else{
         return ;
     }
+
     var possdevice=new Array();
-    basicscreen=uainfo.uascreen.split(",");
+    basicscreen=uainfo.uascreen;
     tagscreen=basicscreen[0]+","+basicscreen[1];
 
     for(var i=1;i<screeninfo.length-1;i+=2){
