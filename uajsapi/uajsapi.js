@@ -69,12 +69,12 @@ function collectUaInfo(uainfo){
         new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*?) "),1),
         new AppRegxp("LBBROWSER","猎豹浏览器",new Array(" (LBBROWSER)"),9),
         new AppRegxp("Firefox","火狐浏览器",new Array("Firefox/(.*)"),1),
-        new AppRegxp("UCBrowser","UC浏览器",new Array("UCBrowser/(.*) "),1),
-        new AppRegxp("MQQBrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*) "),1),
-        new AppRegxp("baidubrowser","百度浏览器",new Array("baidubrowser/(.*) "),1),
+        new AppRegxp("UCBrowser","UC浏览器",new Array("UCBrowser/(.*?) "),1),
+        new AppRegxp("MQQBrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*?) "),1),
+        new AppRegxp("baidubrowser","百度浏览器",new Array("baidubrowser/(.*?) "),1),
         new AppRegxp("MxBrowser","遨游云浏览器",new Array("MxBrowser/(.*)"),1),
         new AppRegxp("LieBaoFast","猎豹浏览器(移动端)",new Array("LieBaoFast/(.*)"),1),
-        new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*)"),1),
+        new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*?)"),1),
         new AppRegxp("MiuiBrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1)
         );
      //sort by prio
