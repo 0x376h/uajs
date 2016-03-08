@@ -36,7 +36,7 @@ uajs从UserAgent上获取关于如下的信息
 在head上引用:  
 http://static.datatiny.com/uajsapi/[ver/]uajsapi.js   
 其中：  
-如果ver/可选，如果不输入，则默认使用最新版本
+如果ver/可选，如果不输入，则默认使用最新版本  
 压缩版:
 http://static.datatiny.com/uajsapi/[ver/]uajsapi_compress.js   
 
@@ -80,7 +80,8 @@ appver:应用版本
 #联系方式
 欢迎大家就加入，以便在变化时及时通知  
 QQ群：QR：![demo url](/qqqun.png)  
-<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=d8efb9587f10208a649123b858b2bc3455ca9211d455aaa73610afcb12d1edcd"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="数据微支持群" title="数据微支持群"></a>
+群号：17924450 数据微支持群
+
 
 
 #协议
