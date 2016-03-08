@@ -33,11 +33,12 @@ function collectUaInfo(uainfo){
     }
     //default uainfo
     setDefaultUainfo(uainfo);
-    var android=new OSRegxpRule("anroid",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
+    var android=new OSRegxpRule("android",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
     var ios=new OSRegxpRule("ios",new Array("OS (.*) like Mac OS X"),new Array("\\((.*?);")); 
     var wp=new OSRegxpRule("windows phone",new Array("Windows Phone (.*?);"),new Array(".*; (.*)\\)"));
     var windows_destop=new OSRegxpRule("windows destop",new Array("Windows NT (.*); "),new Array(""));
-    var osregxps=new Array(android,ios,wp,windows_destop);
+    var macos=new OSRegxpRule("macosx",new Array("Intel Mac OS X (.*?)\\)"),new Array(""));
+    var osregxps=new Array(android,ios,wp,windows_destop,macos);
    
     for(var i=0;i<osregxps.length;i++){
        var osregxp=osregxps[i];
@@ -57,7 +58,7 @@ function collectUaInfo(uainfo){
     //if not found osinfo in UA then return ;
     if(uainfo.osinfo === '') return ;
     
-    if(uainfo.osinfo.osname==="ios"){
+    if(uainfo.osinfo.osname==="ios" || uainfo.osinfo.osname==="macosx" ){
         uainfo.osinfo.osver=uainfo.osinfo.osver.replace(/_/g,".");
     }
      
@@ -69,13 +70,14 @@ function collectUaInfo(uainfo){
         new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*?) "),1),
         new AppRegxp("LBBROWSER","猎豹浏览器",new Array(" (LBBROWSER)"),9),
         new AppRegxp("Firefox","火狐浏览器",new Array("Firefox/(.*)"),1),
-        new AppRegxp("UCBrowser","UC浏览器",new Array("UCBrowser/(.*) "),1),
-        new AppRegxp("MQQBrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*) "),1),
-        new AppRegxp("baidubrowser","百度浏览器",new Array("baidubrowser/(.*) "),1),
+        new AppRegxp("UCBrowser","UC浏览器",new Array("UCBrowser/(.*?) "),1),
+        new AppRegxp("MQQBrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*?) "),1),
+        new AppRegxp("baidubrowser","百度浏览器",new Array("baidubrowser/(.*?) "),1),
         new AppRegxp("MxBrowser","遨游云浏览器",new Array("MxBrowser/(.*)"),1),
         new AppRegxp("LieBaoFast","猎豹浏览器(移动端)",new Array("LieBaoFast/(.*)"),1),
-        new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*)"),1),
-        new AppRegxp("MiuiBrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1)
+        new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*?)"),1),
+        new AppRegxp("MiuiBrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1),
+        new AppRegxp("Chrome","chrome",new Array("Chrome/(.*?) "),1)
         );
      //sort by prio
      appregxps.sort(function(a,b){

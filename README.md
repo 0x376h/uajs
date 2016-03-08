@@ -10,7 +10,7 @@ uajs从UserAgent上获取关于如下的信息
 2.判断用户是否使用某些应用(微信 或者QQ)及版本
 
 #支持的操作系统
-1.anroid  
+1.android  
 2.ios  
 3.windows phone  
 4.windows destop:windows的桌面版  

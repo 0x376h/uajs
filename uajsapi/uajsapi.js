@@ -33,7 +33,7 @@ function collectUaInfo(uainfo){
     }
     //default uainfo
     setDefaultUainfo(uainfo);
-    var android=new OSRegxpRule("anroid",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
+    var android=new OSRegxpRule("android",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
     var ios=new OSRegxpRule("ios",new Array("OS (.*) like Mac OS X"),new Array("\\((.*?);")); 
     var wp=new OSRegxpRule("windows phone",new Array("Windows Phone (.*?);"),new Array(".*; (.*)\\)"));
     var windows_destop=new OSRegxpRule("windows destop",new Array("Windows NT (.*); "),new Array(""));
