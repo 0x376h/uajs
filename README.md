@@ -21,6 +21,15 @@ uajs从UserAgent上获取关于如下的信息
 3.alipay:支付宝客户端  
 4.qq:QQ客户端  
 5.LBBROWSER:猎豹浏览器  
+6.Firefox:火狐浏览器 (1.1+)  
+7.UCBrowser:UC浏览器 (1.1+)  
+8.MQQBrowser:QQ浏览器(移动端) (1.1+)  
+9.baidubrowser:百度浏览器 (1.1+)  
+10.MxBrowser:遨游云浏览器 (1.1+)   
+11.LieBaoFast:猎豹浏览器(移动端) (1.1+)  
+12.Mb2345Browser:2345浏览器(移动端) (1.1+)  
+13.MiuiBrowser:小米手机浏览器 (1.1+)
+
 
 #引用方式 && 版本说明
 ##调用
@@ -28,6 +37,8 @@ uajs从UserAgent上获取关于如下的信息
 http://static.datatiny.com/uajsapi/[ver/]uajsapi.js   
 其中：  
 如果ver/可选，如果不输入，则默认使用最新版本
+压缩版:
+http://static.datatiny.com/uajsapi/[ver/]uajsapi_compress.js   
 
 ##使用
 <pre>
