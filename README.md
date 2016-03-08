@@ -13,7 +13,8 @@ uajs从UserAgent上获取关于如下的信息
 1.anroid  
 2.ios  
 3.windows phone  
-4.windows destop:windows的桌面版
+4.windows destop:windows的桌面版  
+5.macosx
 
 #支持的应用
 1.wechat:微信  
@@ -28,7 +29,8 @@ uajs从UserAgent上获取关于如下的信息
 10.MxBrowser:遨游云浏览器 (1.1+)   
 11.LieBaoFast:猎豹浏览器(移动端) (1.1+)  
 12.Mb2345Browser:2345浏览器(移动端) (1.1+)  
-13.MiuiBrowser:小米手机浏览器 (1.1+)
+13.MiuiBrowser:小米手机浏览器 (1.1+)  
+14.Chrome:Chrome浏览器(1.1+)
 
 
 #引用方式 && 版本说明
