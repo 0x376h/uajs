@@ -64,7 +64,7 @@ function collectUaInfo(uainfo){
      
      
     //app regxp支持优先级,越高越优先
-    var appregxps=new Array(new AppRegxp("wechat","微信",new Array("MicroMessenger/(.*?) "),1),
+    var appregxps=new Array(new AppRegxp("wechat","微信",new Array("MicroMessenger/(.*?) "),2),
         new AppRegxp("weibo","微博手机端",new Array("weibo__(.*?)__"),1),
         new AppRegxp("alipay","支付宝手机端",new Array("AlipayClient/(.*?) "),1),
         new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*?) "),1),
