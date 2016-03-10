@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="uajsapi/uajsapi_compress.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script type="text/javascript">
+        var uainfo=new UaInfo();   
+        document.writeln("操作系统:" + uainfo.osinfo.osname);    
+        document.writeln("操作系统版本:" + uainfo.osinfo.osver);   
+        document.writeln("设备名称:" + uainfo.deviceinfo);  
+        document.writeln("应用名称:" + uainfo.appinfo.appname);   
+        document.writeln("应用版本:" + uainfo.appinfo.appver);   
+        if(uainfo.hasApplePay){
+            document.writeln("support apple pay");
+        }
+   
+         </script>
+    </body>
+</html>
