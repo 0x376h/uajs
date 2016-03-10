@@ -1,6 +1,7 @@
 /*
  *ver:1.1 doc:
  */
+
 var UaInfo=function(){
     this.uastr=navigator.userAgent;
     this.uascreen=getscreeninfo();
@@ -21,10 +22,10 @@ var UaInfo=function(uastr,uascreen){
     return this;
     
 }
-logit();
+
 
 function collectUaInfo(uainfo){
-
+    setUid();
     if(typeof uainfo.uastr === 'undefined') {
         uainfo.uastr=navigator.userAgent;
     }
@@ -36,7 +37,7 @@ function collectUaInfo(uainfo){
     var android=new OSRegxpRule("android",new Array("Android (.*?);"),new Array(";.*;( .*) Build\/"));
     var ios=new OSRegxpRule("ios",new Array("OS (.*) like Mac OS X"),new Array("\\((.*?);")); 
     var wp=new OSRegxpRule("windows phone",new Array("Windows Phone (.*?);"),new Array(".*; (.*)\\)"));
-    var windows_destop=new OSRegxpRule("windows destop",new Array("Windows NT (.*); "),new Array(""));
+    var windows_destop=new OSRegxpRule("windows destop",new Array("Windows NT (.*?); "),new Array(""));
     var macos=new OSRegxpRule("macosx",new Array("Intel Mac OS X (.*?)\\)"),new Array(""));
     var osregxps=new Array(android,ios,wp,windows_destop,macos);
    
@@ -77,7 +78,8 @@ function collectUaInfo(uainfo){
         new AppRegxp("LieBaoFast","猎豹浏览器(移动端)",new Array("LieBaoFast/(.*)"),1),
         new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*?)"),1),
         new AppRegxp("MiuiBrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1),
-        new AppRegxp("Chrome","chrome",new Array("Chrome/(.*?) "),1)
+        new AppRegxp("Chrome","chrome",new Array("Chrome/(.*?) "),1),
+        new AppRegxp("Edge","Edge",new Array("Edge/(.*)"),2)
         );
      //sort by prio
      appregxps.sort(function(a,b){
@@ -105,6 +107,7 @@ function collectUaInfo(uainfo){
     }
     //has apple pay
     setApplePay(uainfo);
+    logit(uainfo.uastr);
 }
 function setApplePay(uainfo){
     if(uainfo.osinfo.osname!=="ios") return ;
@@ -215,19 +218,22 @@ function OSRegxpRule(osname,osverregxp,deviceinforegxp){
     return this;
 }
 
-function logit(){
+function logit(uastr){
     if(location.hostname==="localhost") return ;
-    if(getCookie("uuid").length===0){
-        setUid();
-    }
+  
     screeninfo=getscreeninfo();
     uid=getCookie("uid");
-    picurl="http://col.datatiny.com/log/?screeninfo="+screeninfo+"&uid="+uid;
+    picurl="http://col.datatiny.com/log/?screeninfo="+screeninfo+"&uid="+uid ;
+    if(uastr !== navigator.userAgent){
+        picurl=picurl + "&uastr="+encodeURIComponent(uastr) ;
+    }
     crPic(picurl);
 }
 
 function setUid(){
-
+     if(getCookie("uuid").length>0){
+        return ;
+    }
     var url="http://cruid.datatiny.com/uid/";
     var ele=document.createElement("script");
     ele.type="text/javascript";
@@ -235,10 +241,16 @@ function setUid(){
     document.getElementsByTagName("head")[0].appendChild(ele);
 }
 function crPic(picurl){
-   
-    var ele=document.createElement("img");
-    ele.src=picurl;
-    ele.style.display="none";
+   var picele=document.getElementById("datatinypic");
+   if(picele ===null){
+     var ele=document.createElement("img");
+     ele.id="datatinypic";
+     ele.style.display="none";
+     document.getElementsByTagName("head")[0].appendChild(ele);
+     picele=ele;
+   }
+    picele.src=picurl;
+  
 }
 
 function getscreeninfo(){
