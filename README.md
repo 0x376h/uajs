@@ -37,11 +37,11 @@ uajs从UserAgent上获取关于如下的信息
 #引用方式 && 版本说明
 ##调用
 在head上引用:  
-http://static.datatiny.com/uajsapi/[ver/]uajsapi.js   
+http://hstatic.cn/uajsapi/[ver/]uajsapi.js   
 其中：  
 如果ver/可选，如果不输入，则默认使用最新版本  
 压缩版:
-http://static.datatiny.com/uajsapi/[ver/]uajsapi_compress.js   
+http://hstatic.cn/uajsapi/[ver/]uajsapi_compress.js   
 
 ##使用
 <pre>
@@ -56,7 +56,7 @@ if(uainfo.hasApplePay){
 }
 
 </pre>
-测试链接：http://static.datatiny.com/demo.html  
+测试链接：http://hstatic.cn/demo.html  
 QR：![demo url](/demo_url.png)
 
 #文档对象
