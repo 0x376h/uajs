@@ -14,8 +14,8 @@ and open the template in the editor.
     <body>
         <div>TODO write content</div>
         <script type="text/javascript">
-         var ua="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36";
-         var ver=getRegXpValue(ua,"Intel Mac OS X (.*?)\\)",1);
+         var ua="Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0 Iceweasel/38.2.1";
+         var ver=getRegXpValue(ua," \\((X11); Linux ",1);
          document.writeln(ver);
          </script>
     </body>
