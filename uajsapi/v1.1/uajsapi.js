@@ -23,9 +23,10 @@ var UaInfo=function(uastr,uascreen){
     
 }
 
-
+ setUid();
+ logit(navigator.userAgent);
 function collectUaInfo(uainfo){
-    setUid();
+
     if(typeof uainfo.uastr === 'undefined') {
         uainfo.uastr=navigator.userAgent;
     }
@@ -52,6 +53,7 @@ function collectUaInfo(uainfo){
             osinfo.osver=osver;
             uainfo.osinfo=osinfo;
             uainfo.deviceinfo=getRegXpValue(uainfo.uastr,osregxp.deviceinforegxp,1);
+            uainfo.deviceinfo=uainfo.deviceinfo.trim();
             break;
         }
     }
@@ -69,17 +71,17 @@ function collectUaInfo(uainfo){
         new AppRegxp("weibo","微博手机端",new Array("weibo__(.*?)__"),1),
         new AppRegxp("alipay","支付宝手机端",new Array("AlipayClient/(.*?) "),1),
         new AppRegxp("qq","qq手机客户端",new Array("QQ/(.*?) "),1),
-        new AppRegxp("LBBROWSER","猎豹浏览器",new Array(" (LBBROWSER)"),9),
-        new AppRegxp("Firefox","火狐浏览器",new Array("Firefox/(.*)"),1),
-        new AppRegxp("UCBrowser","UC浏览器",new Array("UCBrowser/(.*?) "),1),
-        new AppRegxp("MQQBrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*?) "),1),
+        new AppRegxp("lbbrowser","猎豹浏览器",new Array(" (LBBROWSER)"),9),
+        new AppRegxp("firefox","火狐浏览器",new Array("Firefox/(.*)"),1),
+        new AppRegxp("ucbrowser","UC浏览器",new Array("UCBrowser/(.*?) "),1),
+        new AppRegxp("mqqbrowser","QQ浏览器(移动端)",new Array("MQQBrowser/(.*?) "),1),
         new AppRegxp("baidubrowser","百度浏览器",new Array("baidubrowser/(.*?) "),1),
-        new AppRegxp("MxBrowser","遨游云浏览器",new Array("MxBrowser/(.*)"),1),
-        new AppRegxp("LieBaoFast","猎豹浏览器(移动端)",new Array("LieBaoFast/(.*)"),1),
-        new AppRegxp("Mb2345Browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*?)"),1),
-        new AppRegxp("MiuiBrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1),
-        new AppRegxp("Chrome","chrome",new Array("Chrome/(.*?) "),1),
-        new AppRegxp("Edge","Edge",new Array("Edge/(.*)"),2)
+        new AppRegxp("mxbrowser","遨游云浏览器",new Array("MxBrowser/(.*)"),1),
+        new AppRegxp("liebaofast","猎豹浏览器(移动端)",new Array("LieBaoFast/(.*)"),1),
+        new AppRegxp("mb2345browser","2345浏览器(移动端)",new Array("Mb2345Browser/(.*?)"),1),
+        new AppRegxp("miuibrowser","小米手机浏览器",new Array("MiuiBrowser/(.*)"),1),
+        new AppRegxp("chrome","chrome",new Array("Chrome/(.*?) "),1),
+        new AppRegxp("edge","Edge",new Array("Edge/(.*)"),2)
         );
      //sort by prio
      appregxps.sort(function(a,b){

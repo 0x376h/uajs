@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>unit Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="uajsapi/uajsapi.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+            ua="Mozilla/5.0 (Linux; Android 4.4.4; HM 2A Build/KTU84Q) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/33.0.0.0 Mobile Safari/537.36 Chitu/1.0.2769 (Xiaomi HM 2A; Android 4.4.4)"
+            uainfo=new UaInfo(ua);
+            assert(uainfo.osinfo.osname,"android");
+            assert(uainfo.osinfo.osver,"4.4.4");
+            assert(uainfo.deviceinfo,"HM 2A");
+            
+            ua="Mozilla/5.0 (iPhone; CPU iPhone OS 7_0_6 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Mobile/11B651 Chitu/1.2.1 (iPhone; iOS 7.0.6)";
+            uainfo=new UaInfo(ua);
+            assert(uainfo.osinfo.osname,"ios");
+            assert(uainfo.osinfo.osver,"7.0.6");
+            assert(uainfo.deviceinfo,"iPhone");           
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            function assert(namea,nameb){
+                if(namea === nameb) return true;
+                throw new Error(namea+ "!=" + nameb +":出错了！");
+            }
+        
+        </script>
+    </body>
+</html>
