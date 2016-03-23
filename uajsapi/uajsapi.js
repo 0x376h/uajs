@@ -165,7 +165,7 @@ function doitatweibo(uainfo){
     var weibodevice=getRegXpValue(uainfo.uastr,"Weibo \\((.*)__weibo",1);
 
     if(weibodevice.length===0) return ;
-    weidevicelist=new Array("iPhone8,2","iPhone 6S Plus","iPhone8,1","iphone 6S","iPhone7,1","iphone 6 plus",
+    weidevicelist=new Array("iPhone8,4","iPhone SE","iPhone8,2","iPhone 6S Plus","iPhone8,1","iphone 6S","iPhone7,1","iphone 6 plus",
     "iPhone7,2","iphone 6","iPhone6,1","iphone 5s","iPhone6,2","iphone 5s","iPhone5,3","iphone 5c",
     "iPhone5,4","iphone 5c","iPhone5,2","iphone 5","iPhone5,1","iphone 5","iPhone4,1","iphone 4s",
     "iPhone3,3","iphone 4","iPhone3,2","iphone 4","iPhone3,1","iphone 4",
