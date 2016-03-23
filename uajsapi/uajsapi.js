@@ -175,7 +175,7 @@ function doitatweibo(uainfo){
     "iPad5,3","iPad Air 2","iPad4,3","iPad Air","iPad4,2","iPad Air","iPad4,1","iPad Air",
     "iPad3,6","ipad 4","iPad3,5","ipad 4","iPad3,4","ipad 4","iPad3,3","the New iPad",
     "iPad3,2","the New iPad","iPad3,1","the New iPad","iPad2,4","ipad 2","iPad2,3","ipad 2",
-    "iPad2,2","ipad 2","iPad2,1","ipad 2","iPad6,8","iPad Pro","iPad6,7","iPad Pro",
+    "iPad2,2","ipad 2","iPad2,1","ipad 2","iPad6,8","iPad Pro","iPad6,7","iPad Pro","iPad6,3","iPad Pro mini",
     "iPad1,1","ipad 1");
     for(var i=0;i<weidevicelist.length-1;i=i+2){
         if(weidevicelist[i]===weibodevice) {
